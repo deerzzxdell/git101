@@ -1,8 +1,6 @@
-type HeaderProps = Readonly<{
-    title: string
-}>
+import Button from './Button'
 
-const Header = ({ title }: HeaderProps) => {
+const Header = ({ title}) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
@@ -11,9 +9,7 @@ const Header = ({ title }: HeaderProps) => {
 }
 
 Header.defaultProps = {
-    title: 'My Bank Account Manager',
+    title: 'My Account',
 }
-
-
 
 export default Header
