@@ -25,7 +25,15 @@ const App = () => {
     }
   ])
 
-  const deposit = (transaction) => {
+  type Proptype = {
+    
+    readonly transactionName: string,
+    readonly amount: string,
+    date: string  
+    
+  }
+
+  const deposit = (transaction: Proptype) => {
     const id = Math.floor(Math.random() * 100000) + 1
     const newTransaction = { id, ...transaction }
     newTransaction.amount = '+' +newTransaction.amount
@@ -34,7 +42,7 @@ const App = () => {
     setTransactionList([...transactionList, newTransaction])
   }
 
-  const withdraw = (transaction) => {
+  const withdraw = (transaction: Proptype) => {
     const id = Math.floor(Math.random() * 100000) + 1
     const newTransaction = { id, ...transaction }
     newTransaction.amount = '-' +newTransaction.amount

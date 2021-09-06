@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types'
+import React ,{MouseEventHandler} from 'react'
 
-const Button = ({ color, text, onClick }) => {
+type Todo ={
+    color: string
+    text: string
+    onClick: MouseEventHandler<HTMLButtonElement>
+}
+
+const Button = ({ color, text, onClick }:Todo) => {
     return (
         <button onClick={onClick} style={{ backgroundColor: color }}className='btn'>{text}</button>
     )

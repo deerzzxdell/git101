@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-const AddDeposit = ({ onAdd }) => {
+type ToAdd = {
+    onAdd: Function
+}
+
+const AddWithdraw = ({ onAdd }:ToAdd) => {
     const [amount, setAmount] = useState('')
 
-    const onSubmit = (e) => {
+    const onSubmit = (e : React.FormEvent) => {
         e.preventDefault()
 
         onAdd({ amount })
@@ -14,11 +18,8 @@ const AddDeposit = ({ onAdd }) => {
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
-                <label>
-                    Deposit Amount
-                </label>
-                <input type='text' placeholder='Add Amount' 
-                value={amount} onChange={(e) => setAmount(e.target.value)} />
+                <label>Amount</label>
+                <input type='text' placeholder='Add Amount' value={amount} onChange={(e) => setAmount(e.target.value)} />
             </div>
 
             <input type='submit' value='Submit' className='btn btn-block' />
@@ -26,4 +27,4 @@ const AddDeposit = ({ onAdd }) => {
     )
 }
 
-export default AddDeposit
+export default AddWithdraw
