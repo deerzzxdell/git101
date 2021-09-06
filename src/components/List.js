@@ -2,7 +2,7 @@
 const List = ({ list }) => {
     return (
         <div className='task'>
-            <h3>{list.transactionName}{list.amount}</h3>
+            <h3>{list.date} {list.transactionName}{list.amount} </h3>
         </div>
     )
 }

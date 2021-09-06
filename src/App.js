@@ -15,11 +15,13 @@ const App = () => {
       id: 1,
       transactionName: 'Withdraw',
       amount: '-0',
+      date: '9/6/2021, 2:23:50 PM'
     },
     {
       id: 2,
       transactionName: 'Deposit',
       amount: '+100',
+      date: '9/6/2021, 2:40:56 PM'
     }
   ])
 
@@ -28,6 +30,7 @@ const App = () => {
     const newTransaction = { id, ...transaction }
     newTransaction.amount = '+' +newTransaction.amount
     newTransaction.transactionName = 'Deposit'
+    newTransaction.date = new window.Date().toLocaleString()
     setTransactionList([...transactionList, newTransaction])
   }
 
@@ -36,6 +39,7 @@ const App = () => {
     const newTransaction = { id, ...transaction }
     newTransaction.amount = '-' +newTransaction.amount
     newTransaction.transactionName = 'Withdraw' 
+    newTransaction.date = new window.Date().toLocaleString()
     setTransactionList([...transactionList, newTransaction])
   }
 
